@@ -232,12 +232,12 @@ function shibboleth_session_initiator_url($redirect = null) {
 
 	$target = add_query_arg('action', 'shibboleth', $target);
 	if ( !empty($redirect) ) {
-		$target = add_query_arg('redirect_to', urlencode($redirect), $target);
+		$target = add_query_arg('redirect_to', $redirect, $target);
 	}
 
 	// now build the Shibboleth session initiator URL
 	$initiator_url = shibboleth_get_option('shibboleth_login_url');
-	$initiator_url = add_query_arg('target', urlencode($target), $initiator_url);
+	$initiator_url = add_query_arg('target', $target, $initiator_url);
 
 	$initiator_url = apply_filters('shibboleth_session_initiator_url', $initiator_url);
 
