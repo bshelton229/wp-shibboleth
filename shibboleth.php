@@ -29,7 +29,7 @@ function shibboleth_activate_plugin() {
 
 	shibboleth_add_option('shibboleth_login_url', get_option('home') . '/Shibboleth.sso/Login');
 	shibboleth_add_option('shibboleth_default_login', false);
-	shibboleth_add_option('shibboleth_logout_url', get_option('home') . '/Shibboleth.sso/Logout');
+	shibboleth_add_option('shibboleth_logout_url', get_option('home') . '/Shibboleth.sso/Logout?return=https://login.wisc.edu/logout');
 
 	$headers = array(
 		'username' => array( 'name' => 'uid', 'managed' => false),
