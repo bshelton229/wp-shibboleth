@@ -32,12 +32,12 @@ function shibboleth_activate_plugin() {
 	shibboleth_add_option('shibboleth_logout_url', get_option('home') . '/Shibboleth.sso/Logout');
 
 	$headers = array(
-		'username' => array( 'name' => 'eppn', 'managed' => false),
+		'username' => array( 'name' => 'uid', 'managed' => false),
 		'first_name' => array( 'name' => 'givenName', 'managed' => true),
 		'last_name' => array( 'name' => 'sn', 'managed' => true),
-		'nickname' => array( 'name' => 'eppn', 'managed' => true),
+		'nickname' => array( 'name' => 'uid', 'managed' => true),
 		'display_name' => array( 'name' => 'displayName', 'managed' => true),
-		'email' => array( 'name' => 'mail', 'managed' => true),
+		'email' => array( 'name' => 'eppn', 'managed' => true),
 	);
 	shibboleth_add_option('shibboleth_headers', $headers);
 
